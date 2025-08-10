@@ -1,0 +1,99 @@
+# Repo specific labels
+- name: Workflow Action
+  description: Related to the workflow action. 
+  color: 08e188
+- name: Scripts
+  description: Related to the scripts.
+  color: 38600a
+- name: Create Label
+  description: Related to creating a label. 
+  color: 85ffbb
+- name: Update Label
+  description: Related to updating a label. 
+  color: 38eff4
+- name: Delete Label
+  description: Related to deleting a label. 
+  color: b60205
+- name: Fetch Labels
+  description: Related to fetching current labels. 
+  color: 3cd9c7
+- name: Label Config
+  description: Related to the label configuration. 
+  color: a685d7
+- name: Workflow Config
+  description: Related to the workflow action configuration. 
+  color: 3f7a9d
+
+# General Labels
+- name:
+  description:
+  color:
+- name: Blocked
+  description: Task is currently blocked by something.
+  color: 7a7199
+- name: Bug 
+  description: Related to something not working.
+  color: d73a4a
+- name: CI 
+  description: Related to Continuous Integration.
+  color: 121cca
+- name: "Difficulty: Easy"
+  description: Task of easy difficulty, not much involved.
+  color: 0e8a16
+- name: "Difficulty: Hard"
+  description: Task of hard difficulty, very involved.
+  color: b60205
+- name: "Difficulty: Medium"
+  description: Task of medium difficulty, somewhat involved.
+  color: fbca04
+- name: Dependencies 
+  description: Pull requests that update a dependency file. 
+  color: 0366d6
+- name: Documentation 
+  description: Improvements or additions to documentation.
+  color: 0075ca
+- name: Duplicate
+  description: This issue or pull request already exists.
+  color: cfd3d7
+- name: Enhancement 
+  description: New feature or improvement. 
+  color: a2eeef
+- name: Good First Issue
+  description: Good for newcomers.
+  color: 7057ff
+- name: Help Wanted
+  description: Extra attention is needed.
+  color: 008672 
+- name: "Priority: High"
+  description: Task of high priority, important and time sensitive.
+  color: b60205
+- name: "Priority: Low"
+  description: Task of low priority, not important or time sensitive.
+  color: 0e8a16
+- name: "Priority: Medium"
+  description: Task of medium priority, slightly imporant and or time sensitive.
+  color: fbca04
+- name: Question
+  description: Further information is requested.
+  color: d876e3
+- name: Refactor
+  description: Related to tasks which change structure or design without changing functionality.
+  color: ebea8f
+- name: "Status: Finished"
+  description: Task is finished, likely merged or very close to merge.
+  color: c2e0c6
+- name: "Status: In Progress"
+  description: Task is in progress.
+  color: fef2c0
+- name: "Status: Not Started"
+  description: Task has not yet been started.
+  color: FFFFFF
+- name: "Status: Under Review"
+  description: Task is under review.
+  color: f9d0c4
+- name: Tests
+  description: Related to unit tests, integration tests, mocked tests, end to end tests, etc.
+  color: e6d483
+- name: Wont Fix
+  description: This will not be worked on.
+  color: FFFFFF
