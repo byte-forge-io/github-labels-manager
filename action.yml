@@ -1,0 +1,42 @@
+name: "GitHub Label Manager"
+description: |
+  Automatically manage GitHub labels with ease.
+
+  Create, Update, and Delete your repositories 
+  labels via a custom yaml configuration file,
+  and this action will take care of the rest.
+
+  This is especially useful when scaffolding
+  org level labels into a new repository, or
+  sharing a common label configuration amongst
+  multiple repositories.
+
+inputs:
+  yaml-path:
+    description: "Path to labels.yml in the caller repo"
+    required: false
+    default: ".github/labels.yml"
+  prune:
+    description: "Delete labels not in the YAML"
+    required: false
+    default: "true"
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.x"
+
+    - name: Install deps
+      shell: bash
+      run: pip install pyyaml requests
+
+    - name: Sync labels
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        REPO: ${{ github.repository }}
+        YAML_FILE: ${{ inputs.yaml-path }}
+        PRUNE: ${{ inputs.prune }}
+      run: python "${{ github.action_path }}/scripts/main.py"
