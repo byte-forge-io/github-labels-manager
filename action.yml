@@ -16,6 +16,9 @@ inputs:
     description: "Path to labels.yml in the caller repo"
     required: false
     default: ".github/labels.yml"
+  yaml-url:
+    description: "URL to fetch labels.yml from (takes precedence over yaml-path)"
+    required: false
   prune:
     description: "Delete labels not in the YAML"
     required: false
@@ -38,5 +41,6 @@ runs:
         GH_TOKEN: ${{ github.token }}
         REPO: ${{ github.repository }}
         YAML_FILE: ${{ inputs.yaml-path }}
+        YAML_URL: ${{ inputs.yaml-url }}
         PRUNE: ${{ inputs.prune }}
       run: python "${{ github.action_path }}/scripts/main.py"

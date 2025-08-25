@@ -1,6 +1,6 @@
-import yaml
 from github_requests import (send_github_request, LabelAction)
 from label import Label
+from config_loader import load_labels_config
 
 
 if __name__ == "__main__":
@@ -8,7 +8,7 @@ if __name__ == "__main__":
     Manage GitHub labels automatically with ease.
 
     Create, Update, and Delete labels at a repository level
-    using yaml file to define your labels for the repository.
+    using yaml file or URL to define your labels for the repository.
     """
 
     # Fetch current labels from the repository
@@ -18,9 +18,12 @@ if __name__ == "__main__":
         exit(1)
     current_label_names = {label["name"] for label in current_labels}
 
-    # Read the new label definitions yaml file that was just updated
-    with open(".github/labels.yml", "r") as f:
-        new_labels = yaml.safe_load(f)
+    # Load the new label definitions from URL or file
+    try:
+        new_labels = load_labels_config()
+    except Exception as e:
+        print(f"Error loading labels config: {e}")
+        exit(1)
 
     # Handle the different label actions based on the new labels
     for label in new_labels:
